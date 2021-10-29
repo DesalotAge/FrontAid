@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import Signup from "../SignUp/Signup.js";
-import './Comment.js'
+import './Comment.css'
 
-const Comment = ({isAuth, signupPopup, setSignupPopup}) => {
-    // const [signupPopup, setSignupPopup] = useState(false)
+const Comment = ({isAuth=true}) => {
     return(
         <div className="comment">
             {isAuth ? <div>
-                <form>
-                    <input type="text" placeholder="Комментарий" />
+                <form className="comment__form">
+                    <input type="text" placeholder="Комментарий" className="signup__input input-2" />
                     <button className="secondary-stroke-btn large" type="submit">Оставить комментарий</button>
                 </form>
-            </div> : <Signup signupPopup={signupPopup} setSignupPopup={setSignupPopup} />}
+            </div> : <Signup />}
         </div>
     )
 }

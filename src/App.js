@@ -5,19 +5,12 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import Comment from './components/Comment'
-
+import {useRoutes} from './routes'
 function App() {
+  const routes = useRoutes();
   return (
       <Router>
-        <div className="app">
-          <Sidebar />
-        </div>
-        <Switch>
-          <Route path="/comment">
-            <Comment />
-          </Route>
-        </Switch>
+        {routes}
       </Router>
     
   );

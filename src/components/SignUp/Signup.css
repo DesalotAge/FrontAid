@@ -1,5 +1,8 @@
 .signup{
     padding: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .signup__list{
     display: flex;

@@ -1,9 +1,12 @@
 import React from "react";
 import './Signup.css'
-
-const Signup = ({signupPopup, setSignupPopup}) => {
-    return (signupPopup) ? (
+import {Link} from 'react-router-dom'
+const Signup = () => {
+    return  (
         <div className="signup">
+            <Link to="/">
+                    <img src="/logo.png"/>
+            </Link>
             <form className="signup__list">
                 <input className="signup__input" type="text" placeholder="Имя" />
                 <input className="signup__input" type="text" placeholder="Фамилия" />
@@ -11,9 +14,12 @@ const Signup = ({signupPopup, setSignupPopup}) => {
                 <input className="signup__input" type="text" placeholder="ИНН" />
                 <input className="signup__input" type="password" placeholder="Пароль" />
                 <button className="primary-red-btn large">Зарегистрироваться</button>
+                <span className="flex">Уже есть аккаунт?
+                    <Link to="/login"><p>Войти</p></Link>
+                </span>
             </form>
         </div>
-    ) : null
+    ) 
 }
 
 export default Signup

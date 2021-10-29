@@ -9,7 +9,6 @@ const Sidebar = () => {
     const openPopup = () => {
         setButtonPopup(prev=>!prev)
     }
-    const [signupPopup, setSignupPopup] = useState(false)
     return(
         <div className="sidebar">
             <header className="header">
@@ -46,8 +45,8 @@ const Sidebar = () => {
                         <button className="station__review">242 Отзыва</button>
                         
                         <div>
-                            <button className="primary-red-btn" onClick={()=>setSignupPopup(prev=>!prev)} >
-                                <Link to="/comment" signupPopup={signupPopup} >
+                            <button className="primary-red-btn"  >
+                                <Link to="/comment" >
                                     Оставить отзыв
                                 </Link>
                             </button>
