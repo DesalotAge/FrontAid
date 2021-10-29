@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+ul{
+    list-style: none;
+}
+p, ul, li, span, button, img, a{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    margin:0px;
+    padding:0px
+}
+.app{
+    background-image: url('./assets/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+a{
+    color: #fff;
+}

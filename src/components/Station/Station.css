@@ -1,0 +1,68 @@
+.station{
+    background-color: #f5f5f5;
+    padding: 36px;
+    position: absolute;
+    top: 50px;
+    left: 200px;
+    right: 200px;
+    bottom: 50px;
+
+}
+
+.station__reviews{
+    background-image: url('../../assets/message.svg');
+    padding-left: 48px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: #858585;
+    margin-top: 51px;
+}
+.reviews__list{
+    margin-top: 16px;
+}
+.reviews__list-item{
+    display: flex;
+    align-items: flex-start;
+}
+.review__user{
+    text-align: center;
+}
+.user__name{
+    margin-top: 8px;
+}
+.review__content{
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 16px 22px;
+    margin-left: 30px;
+}
+.btn-flex{
+    display: flex;
+    align-items: center;
+    margin-top: 48px;
+    justify-content: center;
+}
+.large{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    padding: 13px 21px;
+}
+
+.btn-close{
+    background-color: transparent;
+    border: none;
+    width: 36px;
+    height: 36px;
+    background-image: url('../../assets/refuse.svg');
+    padding: 8px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+}

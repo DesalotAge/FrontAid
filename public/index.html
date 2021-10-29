@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
+    <title>РЖД</title>
+  </head>
+  <body>
+    <div id="root">
+      <div id="map"></div>
+    </div>
+    
+    <script>
+      ymaps.ready(init);
+      function init () {
+          var myMap = new ymaps.Map('map', {
+                  center: [56.326944, 44.0075], // Нижний Новгород
+                  zoom: 13
+              });
+      }
+    </script>
+  </body>
+</html>
