@@ -3,21 +3,28 @@
 ul{
     list-style: none;
 }
+
 p, ul, li, span, button, img, a{
     margin: 0;
     padding: 0;
 }
+
 body{
     font-family: 'Roboto', sans-serif;
     height: 100%;
     margin:0px;
     padding:0px
 }
+
 .app{
-    background-image: url('./assets/bg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: 100vh;
+    display: flex;
 }
+
 a{
     color: #fff;
+}
+
+#map-wrapper {
+    width: 100%;
 }

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Signup from "../SignUp/Signup.js";
 import './Comment.css'
 
-const Comment = ({isAuth=true}) => {
+const Comment = ({isAuth}) => {
     return(
         <div className="comment">
             {isAuth ? <div>

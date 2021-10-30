@@ -1,5 +1,5 @@
 import React from "react";
-import './Sidebar.css'
+import './Sidebar.css';
 import { useState } from "react";
 import Station from "../Station";
 import { Link } from "react-router-dom";
@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Sidebar = () => {
     const [buttonPopup, setButtonPopup] = useState(false)
     const openPopup = () => {
-        setButtonPopup(prev=>!prev)
+        setButtonPopup(prev => !prev)
     }
     return(
         <div className="sidebar">
@@ -19,12 +19,9 @@ const Sidebar = () => {
             <form>
                 <input type="text" placeholder="Поиск вокзала" value="Поиск вокзала" className="input__search"/>
             </form>
-            <ul className="tags__list">
-                {/* map((item) => return(
-                    <li className="tags__list-item">{item.value}</li>
-                )) */}
+            {/* <ul className="tags__list">
                 <li className="tags__list-item">Москва</li>
-            </ul>
+            </ul> */}
             <ul className="stations__list">
                 <div className="stations__list-header">МОСКВА</div>
                 <li className="stations__list-item">
