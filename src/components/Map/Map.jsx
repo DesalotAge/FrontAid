@@ -22,6 +22,18 @@ const useScript = url => {
     }
   }, [url]);
 };
+const chooseRandom = (arr, num = 1) => {
+    const res = [];
+    for(let i = 0; i < num; ){
+       const random = Math.floor(Math.random() * arr.length);
+       if(res.indexOf(arr[random]) !== -1){
+          continue;
+       };
+       res.push(arr[random]);
+       i++;
+    };
+    return res;
+ };
 
 class MyMap extends Component {
     constructor(props) {
@@ -32,13 +44,14 @@ class MyMap extends Component {
     componentDidMount() {
         inst.get('/node_list/').then(res => {
             this.setState({
-                node_info: res.data
+                node_info: chooseRandom(res.data, 1000)
             })
         })
     }
 
     render() {
         console.log(this.state);
+        
     
         return (
             <YMaps>
