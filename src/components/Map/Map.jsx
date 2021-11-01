@@ -37,22 +37,19 @@ const chooseRandom = (arr, num = 1) => {
 
 class MyMap extends Component {
     constructor(props) {
-        super(props);
-        this.state = {node_info: []};
-    }
-
-    componentDidMount() {
-        inst.get('/node_list/').then(res => {
-            this.setState({
-                node_info: chooseRandom(res.data, 1000)
-            })
-        })
-    }
-
-    render() {
-        console.log(this.state);
         
-    
+        super(props);
+
+        console.log(this.props)
+        this.node_info = props.nodes_info;
+        // console.log(props)
+    }
+
+
+    render(props) {
+        console.log('rerendering map component')
+        // console.log(this.props)
+        this.node_info = this.props.nodes_info;
         return (
             <YMaps>
                 <div id='map-wrapper'>
@@ -63,7 +60,7 @@ class MyMap extends Component {
                     >
                         
                         {
-                        this.state.node_info.map((el) => <Placemark geometry={[el.lon, el.lat]} />)
+                        this.node_info.map((el) => <Placemark className={'stations_' + el.id} onClick={this.props.changeStationInfo} geometry={[el.lon, el.lat]} key={el.id}/>)
                         }
                     </Map>
     
