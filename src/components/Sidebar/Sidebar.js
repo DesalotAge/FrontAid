@@ -73,7 +73,7 @@ const Sidebar = (props) => {
                                 </Link>
                             </button>
                             <button className="secondary-stroke-btn" onClick={openPopup}>Подробнее</button>
-                            <Station buttonPopup={buttonPopup} setButtonPopup={setButtonPopup} />
+                            <Station chosen_node={props.chosen_node} buttonPopup={buttonPopup} setButtonPopup={setButtonPopup} />
                         </div>
                     </div>
                 </li>

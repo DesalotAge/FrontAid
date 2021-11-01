@@ -1,26 +1,31 @@
 import React from "react";
 import './Station.css'
 
-const Station = ({buttonPopup, setButtonPopup}) => {
-    return (buttonPopup) ? (
+const Station = (props) => {
+    console.log(props)
+    return (props.buttonPopup) ? (
         <div className="station">
             <div className="flex">
-                <h1 className="station__name-large">Казанский вокзал</h1>
-                <button className="btn-close" onClick={()=>setButtonPopup(prev=> !prev)}></button>
+                <h1 className="station__name-large">{props.chosen_node.city.split(',')[0]} вокзал</h1>
+                <button className="btn-close" onClick={()=>props.setButtonPopup(prev=> !prev)}></button>
             </div>
-            <span className="station__location">Комсомольская площадь, г.Москва</span>
-                <span className="station__org">Ж/Д станция Москва-Пассажирская-Казанская</span>
+            <span className="station__location">{props.chosen_node.city.split(',').slice(1).join(',')}</span>
+                <span className="station__org">{props.chosen_node.title} вокзал</span>
                 <ul className="station__importance">
                     <li className="importance">
-                        <span className="imp">1</span>
-                        <span>Важность соседей</span>
+                        <span className="imp">{Math.round(props.chosen_node.closeness_centrality * 100000) / 1000}</span>
+                        <span>Возможность добраться до ближайших станций</span>
                     </li>
                     <li className="importance">
-                        <span className="not-imp">0.3</span>
-                        <span>Важность соседей</span>
+                        <span className="not-imp">{Math.round(props.chosen_node.betweenness_centrality * 100000) / 1000}</span>
+                        <span>Важность для переезда</span>
+                    </li>
+                    <li className="importance">
+                        <span className="gr-imp">{Math.round(props.chosen_node.katz_centrality * 100000) / 1000}</span>
+                        <span>Вероятность оказаться в этом вокзале</span>
                     </li>
                 </ul>
-            <span className="station__reviews">242 Отзыва</span>
+            <span className="station__reviews">1 Отзыв</span>
             <ul className="reviews__list">
                 <li className="reviews__list-item">
                     <div className="review__user">
